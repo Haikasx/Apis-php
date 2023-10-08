@@ -26,10 +26,12 @@ $email = $explode[0];
 $senha = $explode[1];
 
 if(is_null($email) or empty($senha)){
-echo '<br><span class="badge badge-danger">Error</span> => [Email E Senha Invalidos] => <span class="badge badge-light">@Haika.php</span></br>';
+  echo '<br><span class="badge badge-danger">Error</span> => [Email E Senha Invalidos] => <span class="badge badge-light">@Haika.php</span></br>';
+  return;
 }
 if (strpos($email, '@') === false) {
   echo '<br><span class="badge badge-danger">Error</span> => [Email Invalido] => <span class="badge badge-light">@Haika.php</span></br>';
+  return;
 }
 
 $post = [
