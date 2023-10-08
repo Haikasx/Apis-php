@@ -1,5 +1,7 @@
 <?php
 
+/// Api Atualizada Em 2023 By Haika <3
+
 error_reporting(0);
 
 function puxarbyhaika($string, $start, $end)
